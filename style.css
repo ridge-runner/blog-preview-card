@@ -1,0 +1,176 @@
+@layer reset, global, layout, modules, utils, states;
+
+@layer reset {
+  
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+        margin: unset;
+    }
+
+    button {
+        font: inherit;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer theme {
+    :root {
+        --yellow: hsl(47, 88%, 63%);
+        --white: hsl(0, 0%, 100%);
+        --gray-500: hsl(0, 0%, 42%);
+        --gray-950: hsl(0, 0%, 7%);
+
+        --bg: var(--yellow);
+        --bg-card: var(--white);
+        --clr-text-heading: var(--gray-950);
+        --clr-text-body: var(--gray-500);
+
+        --font-main: 'figtree', sans-serif;
+    }
+
+    @font-face {
+        font-family: 'figtree';
+        font-style: normal;
+        font-weight: 500 800;
+        font-display: swap;
+        src: 
+            url('./assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+    }
+}
+
+@layer global {
+    /* Set site-wide properties */
+    
+    :root {
+        font-size: 16px;
+    }
+
+    body {
+        
+        font-family: var(--font-main);
+        background-color: var(--bg);
+        color: var(--clr-text-body);
+        height: 100vh;
+        width: 100%;
+    }
+
+    h3 {
+        color: var(--clr-text-heading);
+    }
+
+    span {
+        color: var(--gray-950)
+    }
+}
+
+@layer layout {
+    /* Layout overall site structure */
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@layer modules {
+    /* encapsulated CSS */
+    .card {
+        width: 325px;
+
+        background-color: var(--white);
+
+        padding: 20px;
+
+        border-radius: 20px;
+        border: 1px solid var(--gray-950);
+
+        font-style: normal;
+
+        box-shadow: 7px 7px 0px var(--gray-950);
+        
+        margin-block-end: 1rem;
+    }
+    
+    .card__header {
+        margin-block-end: 1em;
+    }
+    .card__header > img {
+        border-radius: 15px;
+    }
+    
+    .card__body {
+        
+        margin-block-end: 2em;
+        
+        .card__tag {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--clr-text-heading);
+            padding: 0.5em 0.6rem;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-block-end: 1rem;
+        }
+        
+        .card__date {
+            display: block;
+            font-size: 0.7rem;
+        }
+        
+        .card__title {
+            font-family: var(--font-main);
+            font-weight: 800;
+        }
+
+        .card__desccription {
+            font-size: 1.2rem;
+        }
+    }
+
+    .card__byline {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1em;
+
+        font-weight: 800;
+        font-size: 0.8rem;
+
+        > img {
+            width: 35px;
+        }
+    }
+
+}
+
+@layer utils {}
+
+@layer states {
+    .card__title:hover {
+        color: var(--yellow);
+        cursor: pointer;
+    }
+}
