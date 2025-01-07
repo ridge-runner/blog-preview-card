@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [blog-preview-card](https://github.com/ridge-runner/blog-preview-card)
-- Live Site URL: [Add live site URL here](https://ridge-runner.github.io/blog-preview-card/)
+- Live Site URL: [here](https://ridge-runner.github.io/blog-preview-card/)
 
 ## My process
 
