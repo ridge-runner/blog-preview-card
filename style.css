@@ -143,10 +143,12 @@
         .card__title {
             font-family: var(--font-main);
             font-weight: 800;
+            color: var(--clr-text-heading)
         }
 
         .card__desccription {
             font-size: 1.2rem;
+            color: var(--clr-text-body);
         }
     }
 
