@@ -62,31 +62,27 @@
 @layer global {
     /* Set site-wide properties */
     
-    :root {
-        font-size: 16px;
-    }
-
     body {
         
         font-family: var(--font-main);
         background-color: var(--bg);
         color: var(--clr-text-body);
-        height: 100vh;
-        width: 100%;
+        min-height: 100vh;
     }
 
     h3 {
         color: var(--clr-text-heading);
     }
 
-    span {
+    p {
         color: var(--gray-950)
     }
 }
 
 @layer layout {
     /* Layout overall site structure */
-    body {
+    main {
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -97,7 +93,7 @@
 @layer modules {
     /* encapsulated CSS */
     .card {
-        width: 325px;
+        max-width: 50%;
 
         background-color: var(--white);
 
@@ -118,6 +114,7 @@
     }
     .card__header > img {
         border-radius: 15px;
+        width: 100%;
     }
     
     .card__body {
@@ -146,7 +143,7 @@
             color: var(--clr-text-heading)
         }
 
-        .card__desccription {
+        .card__description {
             font-size: 1.2rem;
             color: var(--clr-text-body);
         }
@@ -160,6 +157,7 @@
 
         font-weight: 800;
         font-size: 0.8rem;
+        color: var(--gray-950);
 
         > img {
             width: 35px;
@@ -174,5 +172,6 @@
     .card__title:hover {
         color: var(--yellow);
         cursor: pointer;
+        transition: color 0.3s ease;
     }
 }
